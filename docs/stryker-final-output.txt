@@ -1,0 +1,232 @@
+15:33:57 (15044) INFO ProjectReader Found 12 of 34 file(s) to be mutated.
+15:33:57 (15044) INFO Instrumenter Instrumented 12 source file(s) with 453 mutant(s)
+15:33:57 (15044) INFO ConcurrencyTokenProvider Creating 15 test runner process(es).
+15:33:58 (15044) INFO BroadcastReporter Detected that current console does not support the "progress" reporter, downgrading to "progress-append-only" reporter
+15:33:58 (15044) INFO DryRunExecutor Starting initial test run (jest test runner with "perTest" coverage analysis). This may take a while.
+15:34:00 (15044) INFO DryRunExecutor Initial test run succeeded. Ran 102 tests in 1 second (net 66 ms, overhead 1783 ms).
+Mutation testing 38% (elapsed: <1m, remaining: <1m) 295/453 tested (5 survived, 0 timed out)
+
+All tests
+  mutation
+    contaBancaria.mutation.test.js
+      ✓ ContaBancaria - testes para matar mutantes estaAtiva deve retornar false quando a conta nao esta ativa [line 14] (killed 1)
+      ✓ ContaBancaria - testes para matar mutantes sacar deve permitir sacar exatamente o saldo disponivel (saldo + limite) [line 25] (killed 1)
+      ✓ ContaBancaria - testes para matar mutantes podeSacar deve validar os limites inferior e superior [line 37] (killed 3)
+      ✓ ContaBancaria - testes para matar mutantes ajustarLimite deve aceitar limite zero [line 48] (killed 2)
+      ✓ ContaBancaria - testes para matar mutantes saldoNegativo deve retornar false para saldo zero ou positivo [line 60] (killed 2)
+      ~ ContaBancaria - testes para matar mutantes transferir nao deve alterar nenhuma conta quando o valor excede o disponivel [line 72] (covered 18)
+      ✓ ContaBancaria - testes para matar mutantes validarConta deve aceitar todos os status validos e limite zero [line 86] (killed 6)
+      ✓ ContaBancaria - testes para matar mutantes validarConta deve rejeitar cada campo invalido isoladamente [line 97] (killed 6)
+    diversos.mutation.test.js
+      ✓ anagram - testes para matar mutantes deve ordenar os caracteres antes de comparar [line 5] (killed 1)
+      ✓ Banco - testes para matar mutantes deve iniciar com historico vazio [line 12] (killed 2)
+      ✓ Banco - testes para matar mutantes deve permitir sacar exatamente o saldo [line 17] (killed 4)
+    textoUtils.mutation.test.js
+      ✓ TextoUtils - testes para matar mutantes capitalizar deve preservar espacos duplos (palavras vazias) [line 10] (killed 1)
+      ✓ TextoUtils - testes para matar mutantes contarOcorrencias deve contar substrings e retornar 0 para substring vazia [line 14] (killed 5)
+      ✓ TextoUtils - testes para matar mutantes paraSlug deve remover espacos das pontas e agrupar espacos internos [line 20] (killed 2)
+      ✓ TextoUtils - testes para matar mutantes truncar deve manter texto com tamanho exatamente igual ao limite [line 24] (killed 1)
+      ✓ TextoUtils - testes para matar mutantes truncar deve aceitar tamanho zero [line 28] (killed 2)
+      ✓ TextoUtils - testes para matar mutantes truncar deve lancar erro com mensagem especifica [line 32] (killed 1)
+      ✓ TextoUtils - testes para matar mutantes contarPalavras deve retornar 0 para texto vazio ou so com espacos [line 36] (killed 1)
+      ✓ TextoUtils - testes para matar mutantes somenteLetras deve exigir letras do inicio ao fim [line 42] (killed 1)
+      ✓ TextoUtils - testes para matar mutantes substituirTudo deve lancar erro com mensagem especifica [line 48] (killed 2)
+    utilitarios.mutation.test.js
+      ✓ Utilitarios - testes para matar mutantes gerarNumeroAleatorio deve multiplicar o aleatorio pelo maximo [line 14] (killed 1)
+      ✓ Utilitarios - testes para matar mutantes ehNumero deve retornar false para tipos que nao sao number [line 23] (killed 1)
+      ✓ Utilitarios - testes para matar mutantes ehPalindromo deve retornar false para textos que nao sao palindromos [line 29] (killed 5)
+  anagram.test.js
+    ✓ anagram deve retornar true para palavras anagramas ignorando maiusculas e pontuacao [line 4] (killed 8)
+    ✓ anagram deve retornar false para palavras que nao sao anagramas [line 16] (killed 2)
+  banco.test.js
+    ✓ banco deve depositar e registrar transacao [line 4] (killed 5)
+    ✓ banco deve sacar com saldo suficiente [line 16] (killed 3)
+    ✓ banco deve lancar erro ao sacar com saldo insuficiente [line 28] (killed 3)
+    ✓ banco deve transferir valor para conta de destino [line 39] (killed 6)
+    ✓ banco deve definir e validar limite de saque [line 57] (killed 9)
+    ✓ banco deve aplicar juros e registrar no historico [line 71] (killed 6)
+    ✓ banco deve pagar conta e registrar pagamento [line 83] (killed 4)
+    ✓ banco deve retornar total depositado somando apenas depositos [line 95] (killed 9)
+  calculator.test.js
+    ✓ Somar dois valores válidos [line 3] (killed 3)
+    ✓ Diminuir dois valores válidos [line 7] (killed 2)
+    ✓ Multiplicar dois valores válidos [line 11] (killed 2)
+    ✓ Dividir dois valores válidos [line 15] (killed 2)
+  carro.test.js
+    ✓ carro deve criar carro com kilometragem inicial 0 [line 4] (killed 1)
+    ✓ carro deve somar kilometragem ao dirigir distancia positiva [line 17] (killed 5)
+    ✓ carro nao deve alterar kilometragem ao dirigir distancia zero ou negativa [line 28] (killed 1)
+    ✓ carro deve retornar informacoes formatadas do carro [line 40] (killed 2)
+  cnh.test.js
+    ✓ cnh deve retornar true para idade igual ou maior que 18 [line 4] (killed 5)
+    ✓ cnh deve retornar false para idade menor que 18 [line 15] (killed 1)
+  contaBancaria.test.js
+    ✓ conta bancaria deve retornar dados basicos da conta [line 13] (killed 9)
+    ✓ conta bancaria deve depositar com valor valido e rejeitar valor invalido [line 32] (killed 8)
+    ✓ conta bancaria deve sacar quando ha saldo disponivel e rejeitar cenarios invalidos [line 46] (killed 13)
+    ✓ conta bancaria deve alterar titular e controlar bloqueio/ativacao [line 62] (killed 22)
+    ✓ conta bancaria deve encerrar conta somente quando saldo for zero [line 84] (killed 7)
+    ✓ conta bancaria deve avaliar possibilidade de saque e saldo negativo [line 99] (killed 11)
+    ✓ conta bancaria deve aplicar tarifa, ajustar limite e calcular saldo disponivel [line 115] (killed 15)
+    ✓ conta bancaria deve transferir para conta destino quando pode sacar [line 134] (killed 7)
+    ✓ conta bancaria deve falhar transferencia quando saque nao e permitido [line 148] (killed 1)
+    ✓ conta bancaria deve gerar resumo da conta [line 161] (killed 2)
+    ✓ conta bancaria deve validar conta para cenarios valido e invalidos [line 178] (killed 17)
+    ✓ conta bancaria deve resetar conta para estado inicial padrao [line 195] (killed 2)
+  conversor.test.js
+    ✓ Conversor celsiusParaFahrenheit(100) deve retornar 212 [line 29] (killed 4)
+    ~ Conversor celsiusParaFahrenheit(0) deve retornar 32 [line 29] (covered 4)
+    ✓ Conversor fahrenheitParaCelsius(212) deve retornar 100 [line 29] (killed 4)
+    ~ Conversor fahrenheitParaCelsius(32) deve retornar 0 [line 29] (covered 4)
+    ✓ Conversor metrosParaCentimetros(2) deve retornar 200 [line 29] (killed 2)
+    ✓ Conversor centimetrosParaMetros(250) deve retornar 2.5 [line 29] (killed 2)
+    ✓ Conversor quilosParaGramas(3) deve retornar 3000 [line 29] (killed 2)
+    ✓ Conversor gramasParaQuilos(1500) deve retornar 1.5 [line 29] (killed 2)
+    ✓ Conversor horasParaMinutos(2) deve retornar 120 [line 29] (killed 2)
+    ✓ Conversor minutosParaSegundos(3) deve retornar 180 [line 29] (killed 2)
+    ✓ Conversor diasParaHoras(2) deve retornar 48 [line 29] (killed 2)
+    ✓ Conversor semanasParaDias(3) deve retornar 21 [line 29] (killed 2)
+    ✓ Conversor reaisParaCentavos(5) deve retornar 500 [line 29] (killed 2)
+    ✓ Conversor centavosParaReais(250) deve retornar 2.5 [line 29] (killed 2)
+    ✓ Conversor kmParaMetros(2) deve retornar 2000 [line 29] (killed 2)
+    ✓ Conversor metrosParaKm(3500) deve retornar 3.5 [line 29] (killed 2)
+    ✓ Conversor polegadasParaCm(10) deve retornar 25.4 [line 29] (killed 2)
+    ✓ Conversor cmParaPolegadas(25.4) deve retornar 10 [line 29] (killed 2)
+    ✓ Conversor anosParaMeses(2) deve retornar 24 [line 29] (killed 2)
+    ✓ Conversor mesesParaDias(2) deve retornar 60 [line 29] (killed 2)
+    ✓ Conversor bytesParaKb(2048) deve retornar 2 [line 29] (killed 2)
+    ✓ Conversor kbParaBytes(2) deve retornar 2048 [line 29] (killed 2)
+  lista.test.js
+    ✓ lista de compras deve adicionar item na lista [line 4] (killed 5)
+    ✓ lista de compras deve remover item existente da lista [line 15] (killed 4)
+    ✓ lista de compras deve lancar erro ao tentar remover item inexistente [line 28] (killed 4)
+  pessoa.test.js
+    ✓ Testes da classe Pessoa Deve criar uma pessoa com o nome e idade corretos [line 12] (killed 1)
+    ✓ Testes da classe Pessoa Deve apresentar a pessoa corretamente [line 17] (killed 2)
+    ✓ Testes da classe Pessoa Deve atualizar a idade da pessoa corretamente [line 22] (killed 1)
+    ~ Testes da classe Pessoa Deve retornar a apresentação atualizada após mudança de idade [line 27] (covered 4)
+  textoUtils.test.js
+    ✓ TextoUtils inverter deve inverter a string [line 10] (killed 4)
+    ✓ TextoUtils ehPalindromo deve identificar palíndromos corretamente [line 14] (killed 10)
+    ✓ TextoUtils capitalizar deve deixar a primeira letra de cada palavra maiúscula [line 20] (killed 10)
+    ✘ TextoUtils contarOcorrencias deve contar substrings corretamente [line 24] (covered 0)
+    ✓ TextoUtils removerEspacosExtras deve limpar espaços extras [line 28] (killed 5)
+    ✓ TextoUtils paraSlug deve converter texto em slug [line 32] (killed 10)
+    ✓ TextoUtils truncar deve truncar textos longos [line 36] (killed 7)
+    ✓ TextoUtils truncar deve lançar erro para tamanho negativo [line 41] (killed 2)
+    ✓ TextoUtils contarPalavras deve contar as palavras corretamente [line 45] (killed 2)
+    ✓ TextoUtils somenteLetras deve validar strings só com letras [line 49] (killed 4)
+    ✓ TextoUtils substituirTudo deve substituir todas as ocorrências [line 54] (killed 3)
+    ✓ TextoUtils substituirTudo deve lançar erro se alvo for vazio [line 60] (killed 1)
+  userService.test.js
+    ✓ user service deve retornar nome quando usuario existe [line 4] (killed 4)
+    ✓ user service deve lancar erro quando usuario nao existe [line 19] (killed 3)
+  utilitarios.test.js
+    ✓ utilitarios deve executar operacoes com strings [line 4] (killed 26)
+    ✓ utilitarios deve executar operacoes matematicas e validacoes [line 31] (killed 24)
+    ✓ utilitarios deve executar operacoes de arrays e objetos [line 58] (killed 23)
+    ✓ utilitarios deve gerar numero aleatorio dentro do limite [line 90] (killed 1)
+
+[Survived] StringLiteral
+src/anagram.js:6:72
+-     return str.replace(/[^\w]/g, "").toLowerCase().split("").sort().join("");
++     return str.replace(/[^\w]/g, "").toLowerCase().split("").sort().join("Stryker was here!");
+Tests ran:
+    anagram - testes para matar mutantes deve ordenar os caracteres antes de comparar
+    anagram deve retornar true para palavras anagramas ignorando maiusculas e pontuacao
+    anagram deve retornar false para palavras que nao sao anagramas
+
+
+[Survived] MethodExpression
+src/anagram.js:6:10
+-     return str.replace(/[^\w]/g, "").toLowerCase().split("").sort().join("");
++     return str.replace(/[^\w]/g, "").toUpperCase().split("").sort().join("");
+Tests ran:
+    anagram - testes para matar mutantes deve ordenar os caracteres antes de comparar
+    anagram deve retornar true para palavras anagramas ignorando maiusculas e pontuacao
+    anagram deve retornar false para palavras que nao sao anagramas
+
+
+[Survived] EqualityOperator
+src/carro.js:10:13
+-           if (distancia > 0) {
++           if (distancia >= 0) {
+Tests ran:
+    carro deve somar kilometragem ao dirigir distancia positiva
+    carro nao deve alterar kilometragem ao dirigir distancia zero ou negativa
+    carro deve retornar informacoes formatadas do carro
+
+
+[NoCoverage] BooleanLiteral
+src/contaBancaria.js:101:31
+-       if (!sucessoSaque) return false;
++       if (!sucessoSaque) return true;
+
+[Survived] ConditionalExpression
+src/contaBancaria.js:98:9
+-       if (!this.podeSacar(valor)) return false;
++       if (false) return false;
+Tests ran:
+    conta bancaria deve transferir para conta destino quando pode sacar
+    conta bancaria deve falhar transferencia quando saque nao e permitido
+    ContaBancaria - testes para matar mutantes transferir nao deve alterar nenhuma conta quando o valor excede o disponivel
+
+
+[Survived] ConditionalExpression
+src/contaBancaria.js:101:9
+-       if (!sucessoSaque) return false;
++       if (false) return false;
+Tests ran:
+    conta bancaria deve transferir para conta destino quando pode sacar
+
+
+[Survived] MethodExpression
+src/textoUtils.js:58:22
+-       const palavras = texto.trim().split(/\s+/).filter(Boolean);
++       const palavras = texto.split(/\s+/).filter(Boolean);
+Tests ran:
+    TextoUtils contarPalavras deve contar as palavras corretamente
+    TextoUtils - testes para matar mutantes contarPalavras deve retornar 0 para texto vazio ou so com espacos
+
+
+[Survived] Regex
+src/textoUtils.js:58:41
+-       const palavras = texto.trim().split(/\s+/).filter(Boolean);
++       const palavras = texto.trim().split(/\s/).filter(Boolean);
+Tests ran:
+    TextoUtils contarPalavras deve contar as palavras corretamente
+    TextoUtils - testes para matar mutantes contarPalavras deve retornar 0 para texto vazio ou so com espacos
+
+
+[Survived] MethodExpression
+src/utilitarios.js:97:19
+-       const limpo = str.toLowerCase().replace(/[\W_]/g, "");
++       const limpo = str.toUpperCase().replace(/[\W_]/g, "");
+Tests ran:
+    utilitarios deve executar operacoes com strings
+    Utilitarios - testes para matar mutantes ehPalindromo deve retornar false para textos que nao sao palindromos
+
+
+Ran 1.97 tests per mutant on average.
+------------------|------------------|----------|-----------|------------|----------|----------|
+                  | % Mutation score |          |           |            |          |          |
+File              |  total | covered | # killed | # timeout | # survived | # no cov | # errors |
+------------------|--------|---------|----------|-----------|------------|----------|----------|
+All files         |  98.01 |   98.23 |      444 |         0 |          8 |        1 |        0 |
+ anagram.js       |  84.62 |   84.62 |       11 |         0 |          2 |        0 |        0 |
+ banco.js         | 100.00 |  100.00 |       51 |         0 |          0 |        0 |        0 |
+ calculator.js    | 100.00 |  100.00 |        9 |         0 |          0 |        0 |        0 |
+ carro.js         |  90.00 |   90.00 |        9 |         0 |          1 |        0 |        0 |
+ cnh.js           | 100.00 |  100.00 |        6 |         0 |          0 |        0 |        0 |
+ contaBancaria.js |  97.83 |   98.54 |      135 |         0 |          2 |        1 |        0 |
+ conversor.js     | 100.00 |  100.00 |       44 |         0 |          0 |        0 |        0 |
+ lista.js         | 100.00 |  100.00 |       13 |         0 |          0 |        0 |        0 |
+ pessoa.js        | 100.00 |  100.00 |        4 |         0 |          0 |        0 |        0 |
+ textoUtils.js    |  97.37 |   97.37 |       74 |         0 |          2 |        0 |        0 |
+ userService.js   | 100.00 |  100.00 |        7 |         0 |          0 |        0 |        0 |
+ utilitarios.js   |  98.78 |   98.78 |       81 |         0 |          1 |        0 |        0 |
+------------------|--------|---------|----------|-----------|------------|----------|----------|
+15:34:14 (15044) INFO MutationTestReportHelper Final mutation score of 98.01 is greater than or equal to break threshold 80
+15:34:14 (15044) INFO JsonReporter Your report can be found at: file:///C:/source/mutation-tests-stryker-OctavioDemos/reports/mutation/mutation.json
+15:34:14 (15044) INFO HtmlReporter Your report can be found at: file:///C:/source/mutation-tests-stryker-OctavioDemos/reports/mutation/mutation.html
+15:34:14 (15044) INFO MutationTestExecutor Done in 17 seconds.
